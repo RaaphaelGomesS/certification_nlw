@@ -13,5 +13,5 @@ public class StudentDTO {
 
     private String email;
 
-    private TechnologyIndicator tech;
+    private String tech;
 }
