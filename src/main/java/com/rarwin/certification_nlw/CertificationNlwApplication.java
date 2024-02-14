@@ -1,4 +1,4 @@
-package com.rarwin.certification_nlw.aplication;
+package com.rarwin.certification_nlw;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

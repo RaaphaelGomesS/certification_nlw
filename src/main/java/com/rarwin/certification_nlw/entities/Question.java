@@ -1,7 +1,11 @@
 package com.rarwin.certification_nlw.entities;
 
+import jakarta.persistence.*;
 import lombok.*;
+import org.hibernate.annotations.CreationTimestamp;
 
+import java.time.LocalDateTime;
+import java.util.List;
 import java.util.UUID;
 
 @Data
@@ -10,11 +14,23 @@ import java.util.UUID;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
+@Entity(name = "questions")
 public class Question {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
 
+    @Column(name = "description")
     private String description;
 
+    @Column(name = "technology", length = 50)
     private TechnologyIndicator tech;
+
+    @OneToMany
+    @JoinColumn(name = "question_id")
+    private List<Alternative> alternatives;
+
+    @CreationTimestamp
+    private LocalDateTime createAt;
 }

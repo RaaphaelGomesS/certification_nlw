@@ -21,7 +21,7 @@ public class Certification {
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
 
-    @JoinColumn(name = "student_id")
+    @Column(name = "student_id")
     private UUID studentId;
 
     @Column(length = 10)

@@ -6,6 +6,7 @@ import com.rarwin.certification_nlw.entities.Student;
 import com.rarwin.certification_nlw.entities.TechnologyIndicator;
 import com.rarwin.certification_nlw.exception.StudentException;
 import com.rarwin.certification_nlw.repository.StudentRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -14,6 +15,7 @@ import java.util.Optional;
 @Service
 public class StudentService {
 
+    @Autowired
     private StudentRepository studentRepository;
 
     public boolean alreadyHasACertificationForTech(StudentDTO studentDTO) {

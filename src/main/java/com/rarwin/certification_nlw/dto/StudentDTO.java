@@ -1,6 +1,5 @@
 package com.rarwin.certification_nlw.dto;
 
-import com.rarwin.certification_nlw.entities.TechnologyIndicator;
 import lombok.*;
 
 @Data

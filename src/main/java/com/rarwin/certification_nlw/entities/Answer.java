@@ -13,6 +13,7 @@ import java.util.UUID;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
+@Entity(name = "answers")
 public class Answer {
 
     @Id
@@ -36,9 +37,8 @@ public class Answer {
     @Column(name = "question_id")
     private UUID questionId;
 
-    @ManyToOne
-    @JoinColumn(name = "question_id", insertable = false, updatable = false)
-    private Question question;
+    @Column(name = "answer_id")
+    private UUID answerId;
 
     @Column(name = "is_correct")
     private boolean isCorrect;
