@@ -1,9 +1,6 @@
 package com.rarwin.certification_nlw.entities;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
 
@@ -23,10 +20,10 @@ public class Alternative {
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
 
+    @Column(name = "description")
     private String description;
 
-    private UUID questionId;
-
+    @Column(name = "is_correct")
     private boolean isCorrect;
 
     @CreationTimestamp

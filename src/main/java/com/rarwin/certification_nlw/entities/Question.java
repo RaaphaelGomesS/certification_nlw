@@ -21,11 +21,11 @@ public class Question {
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
 
+    @Column(name = "technology")
+    private TechnologyIndicator tech;
+
     @Column(name = "description")
     private String description;
-
-    @Column(name = "technology", length = 50)
-    private TechnologyIndicator tech;
 
     @OneToMany
     @JoinColumn(name = "question_id")
