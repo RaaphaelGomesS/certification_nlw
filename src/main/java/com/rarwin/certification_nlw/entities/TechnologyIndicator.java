@@ -15,7 +15,7 @@ public enum TechnologyIndicator {
     public static TechnologyIndicator getByTheName(String name) {
 
         for (TechnologyIndicator indicator : TechnologyIndicator.values()) {
-            if (Objects.equals(indicator.name(), name)) {
+            if (Objects.equals(indicator.name, name)) {
                 return indicator;
             } else {
                 return null;

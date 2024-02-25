@@ -22,7 +22,7 @@ public class Question {
     private UUID id;
 
     @Column(name = "technology")
-    private TechnologyIndicator tech;
+    private String tech;
 
     @Column(name = "description")
     private String description;
