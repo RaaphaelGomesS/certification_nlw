@@ -18,14 +18,14 @@ public class StudentService {
     @Autowired
     private StudentRepository studentRepository;
 
-    public boolean alreadyHasACertificationForTech(StudentDTO studentDTO) {
+    public boolean alreadyHasACertificationForTech(StudentDTO studentDTO) throws StudentException {
 
         Student student = getStudentByEmail(studentDTO);
 
         return hasTheCertification(student, studentDTO);
     }
 
-    private boolean hasTheCertification(Student student, StudentDTO studentDTO) {
+    private boolean hasTheCertification(Student student, StudentDTO studentDTO) throws StudentException {
 
         List<Certification> certificationList = student.getCertificationList();
 
@@ -43,7 +43,7 @@ public class StudentService {
         }
     }
 
-    private Student getStudentByEmail(StudentDTO studentDTO) {
+    private Student getStudentByEmail(StudentDTO studentDTO) throws StudentException {
 
         try {
             Optional<Student> student = studentRepository.getStudentByEmail(studentDTO.getEmail());
