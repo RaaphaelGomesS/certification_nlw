@@ -37,8 +37,8 @@ public class Answer {
     @Column(name = "question_id")
     private UUID questionId;
 
-    @Column(name = "answer_id")
-    private UUID answerId;
+    @Column(name = "alternative_id")
+    private UUID alternativeId;
 
     @Column(name = "is_correct")
     private boolean isCorrect;

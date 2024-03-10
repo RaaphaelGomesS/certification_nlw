@@ -3,6 +3,7 @@ package com.rarwin.certification_nlw.controller;
 import com.rarwin.certification_nlw.dto.AnswersAndQuestionsDTO;
 import com.rarwin.certification_nlw.dto.AnswersDTO;
 import com.rarwin.certification_nlw.dto.StudentDTO;
+import com.rarwin.certification_nlw.entities.Certification;
 import com.rarwin.certification_nlw.exception.StudentException;
 import com.rarwin.certification_nlw.service.AnswerService;
 import com.rarwin.certification_nlw.service.StudentService;
@@ -35,7 +36,7 @@ public class StudentController {
     }
 
     @PostMapping("/certification/answers")
-    public AnswersDTO verifyAnswersIsCorrect(@RequestBody AnswersDTO answersDTO) {
+    public Certification verifyAnswersIsCorrect(@RequestBody AnswersDTO answersDTO) {
 
         return answerService.checkAnswersFromStudent(answersDTO);
     }
