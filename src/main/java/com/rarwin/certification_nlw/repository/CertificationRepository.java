@@ -13,7 +13,4 @@ import java.util.UUID;
 @Repository
 @EnableJpaRepositories
 public interface CertificationRepository extends JpaRepository<Certification, UUID> {
-
-    @Query("SELECT c FROM certifications c INNER JOIN c.student std WHERE std.email = :email AND c.tech = :tech")
-    List<Certification> findByStudentEmailAndTechnology(String email, TechnologyIndicator tech);
 }

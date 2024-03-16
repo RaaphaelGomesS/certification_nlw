@@ -17,8 +17,6 @@ public enum TechnologyIndicator {
         for (TechnologyIndicator indicator : TechnologyIndicator.values()) {
             if (Objects.equals(indicator.name, name)) {
                 return indicator;
-            } else {
-                return null;
             }
         }
         return null;

@@ -12,7 +12,7 @@ public class CertificationBuilder {
     public static Certification from(UUID studentId, AnswersDTO answersDTO) {
 
         return Certification.builder()
-                .studentId(studentId != null ? studentId : UUID.randomUUID())
+                .studentId(studentId)
                 .tech(TechnologyIndicator.getByTheName(answersDTO.getTechnology()))
                 .createAt(LocalDateTime.now())
                 .build();
