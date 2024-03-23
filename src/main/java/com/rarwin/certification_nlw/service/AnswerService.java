@@ -31,11 +31,11 @@ public class AnswerService {
     private CertificationRepository certificationRepository;
 
     @Autowired
-    private StudentService studentService;
+    private CertificationService certificationService;
 
     public Certification checkAnswersFromStudent(AnswersDTO answers) throws StudentException {
 
-        studentService.verifyAlreadyHasACertificationForTech(new StudentDTO(answers.getEmail(), answers.getTechnology()));
+        certificationService.verifyAlreadyHasACertificationForTech(new StudentDTO(answers.getEmail(), answers.getTechnology()));
 
         List<AnswersAndQuestionsDTO> answersAndQuestions = answers.getAnswersAndQuestions();
 
