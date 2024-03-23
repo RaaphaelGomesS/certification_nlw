@@ -26,17 +26,14 @@ public class StudentController {
     @PostMapping("/verifyHasCertification")
     public String verifyHasCertification(@RequestBody StudentDTO studentDTO) throws StudentException {
 
-        boolean hasCertification = studentService.alreadyHasACertificationForTech(studentDTO);
+        studentService.verifyAlreadyHasACertificationForTech(studentDTO);
 
-        if (hasCertification) {
-            return "Student already has the certification!";
-        } else {
-            return "Student can make certification!";
-        }
+        return "Student can make certification!";
+
     }
 
     @PostMapping("/certification/answers")
-    public Certification verifyAnswersIsCorrect(@RequestBody AnswersDTO answersDTO) {
+    public Certification verifyAnswersIsCorrect(@RequestBody AnswersDTO answersDTO) throws StudentException {
 
         return answerService.checkAnswersFromStudent(answersDTO);
     }

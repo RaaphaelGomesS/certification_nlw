@@ -18,11 +18,13 @@ public class StudentService {
     @Autowired
     private StudentRepository studentRepository;
 
-    public boolean alreadyHasACertificationForTech(StudentDTO studentDTO) throws StudentException {
+    public void verifyAlreadyHasACertificationForTech(StudentDTO studentDTO) throws StudentException {
 
         Student student = getStudentByEmail(studentDTO);
 
-        return hasTheCertification(student, studentDTO);
+        if (hasTheCertification(student, studentDTO)) {
+            throw new StudentException("Student already get the certification!");
+        }
     }
 
     private boolean hasTheCertification(Student student, StudentDTO studentDTO) throws StudentException {

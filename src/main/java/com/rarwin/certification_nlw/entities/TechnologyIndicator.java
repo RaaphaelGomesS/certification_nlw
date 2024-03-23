@@ -6,7 +6,7 @@ public enum TechnologyIndicator {
 
     JAVA("Java"), NODE_JS("Node"), CSHARP("C#"), C("C"), PYTHON("Python");
 
-    private String name;
+    private final String name;
 
     TechnologyIndicator(String name) {
         this.name = name;

@@ -8,7 +8,6 @@ import java.time.LocalDateTime;
 import java.util.List;
 import java.util.UUID;
 
-@Data
 @Getter
 @Setter
 @Builder
@@ -27,14 +26,14 @@ public class Certification {
     @Column(length = 10)
     private int grade;
 
-    @Column(length = 20)
+    @Enumerated(EnumType.STRING)
     private TechnologyIndicator tech;
 
     @ManyToOne
     @JoinColumn(name = "student_id", insertable = false, updatable = false)
     private Student student;
 
-    @OneToMany
+    @OneToMany(cascade = CascadeType.ALL)
     @JoinColumn(name = "certification_id")
     List<Answer> answersCertification;
 
