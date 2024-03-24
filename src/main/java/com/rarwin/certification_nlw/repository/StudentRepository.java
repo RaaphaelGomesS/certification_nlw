@@ -13,7 +13,7 @@ import java.util.UUID;
 
 @Repository
 @EnableJpaRepositories
-public interface StudentRepository extends JpaRepository<Certification, UUID> {
+public interface StudentRepository extends JpaRepository<Student, UUID> {
 
     @Query("SELECT s FROM students s WHERE s.email = :email")
     Optional<Student> getStudentByEmail(@Param("email") String email);
